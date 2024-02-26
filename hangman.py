@@ -85,6 +85,11 @@ def main():
     pygame.init()
     win = pygame.display.set_mode((WIDTH, HEIGHT))
     clock = pygame.time.Clock()
+    pygame.display.set_caption('Hangman Game')
+
+    Icon = pygame.image.load('icon.png')
+
+    pygame.display.set_icon(Icon)
 
     levels = ["Easy", "Medium", "Hell"]
     level = 0

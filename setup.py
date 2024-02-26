@@ -4,7 +4,8 @@ from cx_Freeze import setup, Executable
 
 base='Win32GUI' 
 
-includefiles = ['C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\5000words.txt', 'C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\words.txt', 'C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\words_alpha.txt']
+includefiles = ['C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\5000words.txt', 'C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\words.txt', 'C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\words_alpha.txt','C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\icon.ico',
+'C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\icon.png']
 
 shortcut_table = [
     ("DesktopShortcut",        # Shortcut
@@ -13,7 +14,7 @@ shortcut_table = [
      "TARGETDIR",              # Component_
      "[TARGETDIR]Hangman.exe",# Target
      None,                     # Arguments
-     None,                     # Description
+     "Hangman",                     # Description
      None,                     # Hotkey
      None,                     # Icon
      None,                     # IconIndex
@@ -26,7 +27,7 @@ shortcut_table = [
      "TARGETDIR",              # Component_
      "[TARGETDIR]Hangman.exe",# Target
      None,                     # Arguments
-     None,                     # Description
+     "Hangman",                     # Description
      None,                     # Hotkey
      None,                     # Icon
      None,                     # IconIndex
@@ -39,7 +40,10 @@ msi_data = {"Shortcut": shortcut_table}
 
 bdist_msi_options = {'data': msi_data}
 
-executables = [Executable("hangman.py", base=base,)]
+executables = [Executable(
+    "hangman.py", base=base,
+    icon='C:\\Users\\rushi\\OneDrive\\Desktop\\Programming\\Python\\Hangman\\icon.ico',
+    )]
 
 packages = ["idna", 'time', 'pygame', 'random', 'sys']
 options = {
